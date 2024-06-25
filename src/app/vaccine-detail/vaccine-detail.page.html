@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Vaccine Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="vaccineData">
+    <ion-card-header>
+      <ion-card-title>Vaccine Data for {{ vaccineData.report_date }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Previous Day Total Doses Administered: {{ vaccineData.previous_day_total_doses_administered }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Previous Day At Least One: {{ vaccineData.previous_day_at_least_one }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Previous Day Fully Vaccinated: {{ vaccineData.previous_day_fully_vaccinated }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Previous Day 3 Doses: {{ vaccineData.previous_day_3doses }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Total Doses Administered: {{ vaccineData.total_doses_administered }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Total Individuals At Least One: {{ vaccineData.total_individuals_at_least_one }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Total Individuals Partially Vaccinated: {{ vaccineData.total_individuals_partially_vaccinated }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Total Doses in Fully Vaccinated Individuals: {{ vaccineData.total_doses_in_fully_vaccinated_individuals }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Total Individuals Fully Vaccinated: {{ vaccineData.total_individuals_fully_vaccinated }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Total Individuals 3 Doses: {{ vaccineData.total_individuals_3doses }}</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-item>
+        <ion-label position="floating">Send Message</ion-label>
+        <ion-input [(ngModel)]="message"></ion-input>
+      </ion-item>
+      <ion-button expand="full" (click)="sendMessage()">Send</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

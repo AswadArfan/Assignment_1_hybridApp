@@ -1,0 +1,58 @@
+<ion-card color="warning" *ngIf="canadaData">
+  
+  <ion-card-header>
+    <ion-card-title>Canada COVID-19 Summary</ion-card-title>
+    <ion-card-subtitle>As of {{ canadaData.date }}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-label>Total Cases: {{ canadaData.totalcases }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Total Deaths: {{ canadaData.numdeaths }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Cases in Last 7 Days: {{ canadaData.numtotal_last7 }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Deaths in Last 7 Days: {{ canadaData.numdeaths_last7 }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Average Cases (Last 7 Days): {{ canadaData.avgcases_last7 }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+<ion-card color="primary"  *ngIf="ontarioData">
+  <ion-card-header>
+    <ion-card-title>Ontario COVID-19 Status</ion-card-title>
+    <ion-card-subtitle>As of {{ ontarioData['Reported Date'] }}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-label>Total Cases: {{ ontarioData['Total Cases'] }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Confirmed Positive: {{ ontarioData['Confirmed Positive'] }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Resolved: {{ ontarioData['Resolved'] }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Deaths: {{ ontarioData['Deaths'] }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Hospitalized: {{ ontarioData['Number of patients hospitalized with COVID-19'] }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>In ICU: {{ ontarioData['Number of patients in ICU due to COVID-19'] }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>On Ventilator: {{ ontarioData['Number of patients in ICU on a ventilator due to COVID-19'] }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
